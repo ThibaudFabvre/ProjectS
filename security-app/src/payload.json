@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Games",
+        "sections": [
+            {
+                "name": "Steam",
+                "contents": [
+                    {
+                        "username": "Nosfeato",
+                        "password": "Poloppol123!"
+                    },
+                    {
+                        "username": "Sorcier",
+                        "password": "POLOPPOL123!"
+                    }                    
+                ]
+            },
+            {
+                "name": "Total War Arena",
+                "contents": [
+                    {
+                        "username": "Sorcier",
+                        "password": "POLOPPOL123!"
+                    }
+                ]
+            }
+        ]
+    }
+]
