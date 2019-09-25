@@ -4,6 +4,7 @@
 
 import React from 'react';
 import uuidv4 from 'uuid/v4';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 /**
  * Local imports
@@ -18,10 +19,10 @@ import { StyledPlaybacks, StyledPlaybacksList } from './playbacks.styled';
  * Component
  */
 
-const Playbacks = () => {
+const Playbacks = ({ tracksList }) => {
     return (
         <StyledPlaybacks>
-            {tracksList[1] ? <OverallTracksManager /> : null}
+            <OverallTracksManager />
             <StyledPlaybacksList>
                 {/* This function also renders the tracks in the list. */}
                 {tracksList.map((track, index) => (
@@ -40,13 +41,4 @@ const mapStateToProps = ({ musicList: { tracksList } }) => ({
     tracksList,
 });
 
-const mapDispatchToProps = ({ musicList }) => ({
-    addToTrackList: musicList.addTrackToList,
-});
-
-connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(Playbacks);
-
-export default Playbacks;
+export default compose(connect(mapStateToProps))(Playbacks);

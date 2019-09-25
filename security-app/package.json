@@ -5,6 +5,7 @@
     "@babel/core": "^7.6.0",
     "@babel/plugin-proposal-class-properties": "*",
     "@babel/plugin-proposal-object-rest-spread": "*",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "*",
     "@babel/preset-react": "*",
     "@fortawesome/fontawesome-free": "^5.10.1",
@@ -51,6 +52,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
+    "@babel/runtime": "^7.6.2",
     "@rematch/core": "^1.2.0",
     "axios": "^0.18.0",
     "babel-upgrade": "^1.0.1",

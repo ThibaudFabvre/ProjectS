@@ -52,7 +52,7 @@ class OverallTracksManager extends React.Component {
                 <StyledOverallButton type="button" playing={playing} onClick={this.playAllTracks}>
                     PLAY
                 </StyledOverallButton>
-                <StyledOverallButton type="button" playing={playing} onClick={this.pauseAllTracks}>
+                <StyledOverallButton type="button" playing={!playing} onClick={this.pauseAllTracks}>
                     PAUSE
                 </StyledOverallButton>
                 <StyledOverallButton type="button" onClick={this.resetAllTracks}>

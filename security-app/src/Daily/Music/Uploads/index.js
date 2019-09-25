@@ -1,17 +1,24 @@
 import React from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import { StyledInput } from './uploads.styled';
 
-const addTrack = (event) => {
+const addTrackToList = (event) => {
     const file = event.target.files[0];
     const filePath = window.URL.createObjectURL(file);
     const { name } = file;
-    addToTracksList(name, filePath);
+    const payload = { name, filePath };
+    addTrack(payload);
     event.target.value = null;
 };
-const Uploads = () => (
+const Uploads = ({ addTrack }) => (
     <>
-        <StyledInput id="file-input" type="file" onChange={addTrack} />
+        <StyledInput id="file-input" type="file" onChange={addTrackToList} />
     </>
 );
 
-export default Uploads;
+const mapDispatchToProps = ({ musicList: { addTrack } }) => ({
+    addTrack,
+});
+
+export default compose(connect(mapDispatchToProps))(Uploads);

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledPlaybacks = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 2rem auto;
+    margin: 1rem auto;
     height: 60rem;
     border: 0.3rem solid rgb(165, 165, 165);
 `;
