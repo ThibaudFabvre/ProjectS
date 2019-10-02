@@ -1,13 +1,21 @@
 import React from 'react';
-import { StyledMusicPage } from './music.styled';
+import { StyledMusicPage, StyledHeader, StyledBody, StyledFooter } from './music.styled';
 
-import Uploads from './Uploads';
+import Library from './Library';
 import Playbacks from './Playbacks';
+import OverallTracksManager from './OverallTracksManager';
 
 const MusicApp = () => (
     <StyledMusicPage>
-        <Uploads />
-        <Playbacks />
+        <StyledHeader>
+            <Library />
+        </StyledHeader>
+        <StyledBody>
+            <Playbacks />
+        </StyledBody>
+        <StyledFooter>
+            <OverallTracksManager />
+        </StyledFooter>
     </StyledMusicPage>
 );
 

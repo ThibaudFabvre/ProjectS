@@ -12,24 +12,36 @@ import { connect } from 'react-redux';
 
 // local components imports;
 import Track from './Track';
-import OverallTracksManager from './OverallTracksManager';
-import { StyledPlaybacks, StyledPlaybacksList } from './playbacks.styled';
+import Volume from './Volume';
+import { TiMediaPlayReverse, TiMediaPlay } from 'react-icons/ti';
+import { StyledTrackManager, StyledVolumeManager, StyledSection, StyledButton } from './playbacks.styled';
 
 /**
  * Component
  */
 
-const Playbacks = ({ tracksList }) => {
+const Playbacks = ({ tracksList, activeTrack, setActiveTrack }) => {
+    const track = tracksList[activeTrack];
     return (
-        <StyledPlaybacks>
-            <OverallTracksManager />
-            <StyledPlaybacksList>
-                {/* This function also renders the tracks in the list. */}
-                {tracksList.map((track, index) => (
-                    <Track key={`${track.name}_${uuidv4()}`} trackNumber={index} track={track} />
-                ))}
-            </StyledPlaybacksList>
-        </StyledPlaybacks>
+        <>
+            <StyledSection></StyledSection>
+            <StyledTrackManager>
+                {tracksList[activeTrack] && (
+                    <>
+                        <StyledButton onClick={() => setActiveTrack(activeTrack - 1)}>
+                            <TiMediaPlayReverse />
+                        </StyledButton>
+                        <Track track={track} />
+                        <StyledButton onClick={() => setActiveTrack(activeTrack + 1)}>
+                            <TiMediaPlay />
+                        </StyledButton>
+                    </>
+                )}
+            </StyledTrackManager>
+            <StyledVolumeManager>
+                <Volume />
+            </StyledVolumeManager>
+        </>
     );
 };
 
@@ -37,8 +49,18 @@ const Playbacks = ({ tracksList }) => {
  * Export
  */
 
-const mapStateToProps = ({ musicList: { tracksList } }) => ({
+const mapStateToProps = ({ musicModal: { tracksList, activeTrack } }) => ({
     tracksList,
+    activeTrack,
 });
 
-export default compose(connect(mapStateToProps))(Playbacks);
+const mapDispatchToProps = ({ musicModal: { setActiveTrack } }) => ({
+    setActiveTrack,
+});
+
+export default compose(
+    connect(
+        mapStateToProps,
+        mapDispatchToProps,
+    ),
+)(Playbacks);

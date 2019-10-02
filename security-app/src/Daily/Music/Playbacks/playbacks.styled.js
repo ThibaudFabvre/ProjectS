@@ -1,13 +1,29 @@
 import styled from 'styled-components';
 
-export const StyledPlaybacks = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 1rem auto;
-    height: 60rem;
-    border: 0.3rem solid rgb(165, 165, 165);
+export const StyledSection = styled.div`
+    width: 25%;
 `;
 
-export const StyledPlaybacksList = styled.ul`
-    overflow-y: auto;
+export const StyledVolumeManager = styled(StyledSection)`
+    display: flex;
+    justify-content: center;
+`;
+
+export const StyledTrackManager = styled(StyledSection)`
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+`;
+
+export const StyledButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    backround-color: #aaa;
+    border-radius: 50%;
+    border: none;
 `;

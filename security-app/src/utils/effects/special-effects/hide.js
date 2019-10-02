@@ -2,7 +2,7 @@ export const hide = (evt, elements) => {
     const toggle = 'activate';
     if (elements) {
         elements.forEach((element) => {
-            const lowerCasedElement = element.toLowerCase();
+            const lowerCasedElement = element.name;
             const domElement = document.getElementById(`${lowerCasedElement}`);
             if (domElement.classList.contains(`${toggle}`)) {
                 domElement.classList.remove(`${toggle}`);

@@ -9,9 +9,9 @@ const Daily = () => (
     <>
         {apps.map((app) => (
             <section>
-                <Button key={`${app + uuidv4}`}>
-                    <Link to={`/${app.toLowerCase()}`}>{app}</Link>
-                </Button>
+                <Link to={`/${app.toLowerCase()}`}>
+                    <Button key={`${app + uuidv4}`}>{app}</Button>
+                </Link>
             </section>
         ))}
     </>
