@@ -1,14 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { listElementCoreStyle } from 'src/styles/themes';
 
-const listElementCoreStyle = css`
-    border-bottom: 1px;
-    border-left: 1px;
-    border-right: 1px;
-    border-style: solid;
-    border-color: #fff;
-    color: #fff;
-    padding: 0.5rem;
-`;
 export const StyledButton = styled.button`
     display: flex;
     align-items: center;
@@ -23,8 +15,6 @@ export const StyledButton = styled.button`
     border-radius: 50%;
     font-size: 1rem;
 `;
-
-export const StyledElementDetail = styled.span``;
 
 export const StyledArrowElement = styled.li`
     font-size: 2rem;
@@ -42,19 +32,13 @@ export const StyledTracksManager = styled.div`
     width: 20rem;
 `;
 
-export const StyledListElement = styled.li`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-    ${listElementCoreStyle}
-`;
-
 export const StyledNoList = styled.li`
     text-align: center;
     ${listElementCoreStyle}
 `;
 export const StyledList = styled.ul`
+    display: flex;
+    flex-direction: column;
     width: 100%;
 
     li:last-child {

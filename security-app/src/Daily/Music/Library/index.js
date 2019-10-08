@@ -3,31 +3,15 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { TiThList } from 'react-icons/ti';
 import Uploads from './Uploads';
-import {
-    StyledButton,
-    StyledTracksManager,
-    StyledList,
-    StyledListElement,
-    StyledElementDetail,
-    StyledArrowElement,
-    StyledNoList,
-} from './library.styled';
-import { FaTrashAlt } from 'react-icons/fa';
-import { IoIosArrowDropdown, IoIosArrowDropup, IoIosPlayCircle } from 'react-icons/io';
+import LibraryElement from './LibraryElement';
+import { StyledButton, StyledTracksManager, StyledList, StyledArrowElement, StyledNoList } from './library.styled';
+import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
+import uuidv4 from 'uuidv4';
 
-const Library = ({ tracksList, removeTrack }) => {
+const Library = ({ tracksList }) => {
     const [displayList, setListDisplay] = useState(false);
 
-    const renderList = () =>
-        tracksList.map((track, index) => (
-            <StyledListElement>
-                <StyledElementDetail>{track.name}</StyledElementDetail>
-                <StyledElementDetail>{track.duration}</StyledElementDetail>
-                <IoIosPlayCircle />
-                <FaTrashAlt onClick={() => removeTrack(index)} />
-            </StyledListElement>
-        ));
-
+    const renderList = () => tracksList.map((track, index) => <LibraryElement key={index + uuidv4} index={index} track={track} />);
     return (
         <>
             <StyledButton onClick={() => setListDisplay(!displayList)}>
@@ -55,13 +39,4 @@ const mapStateToProps = ({ musicModal: { tracksList } }) => ({
     tracksList,
 });
 
-const mapDispatchToProps = ({ musicModal: { removeTrack } }) => ({
-    removeTrack,
-});
-
-export default compose(
-    connect(
-        mapStateToProps,
-        mapDispatchToProps,
-    )(Library),
-);
+export default compose(connect(mapStateToProps)(Library));

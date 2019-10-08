@@ -12,6 +12,7 @@ export const StyledVolumeManager = styled(StyledSection)`
 export const StyledTrackManager = styled(StyledSection)`
     width: 50%;
     display: flex;
+    height: 100%;
     justify-content: space-around;
     align-items: center;
     font-size: 2rem;

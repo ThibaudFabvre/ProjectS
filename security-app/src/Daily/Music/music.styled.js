@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled.div`
     height: 10%;
 `;
 
-export const StyledBody = styled.body`
+export const StyledBody = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 75%;
 `;
 
-export const StyledFooter = styled.footer`
+export const StyledFooter = styled.div`
     height: 15%;
 `;
 

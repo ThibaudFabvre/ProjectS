@@ -31,7 +31,7 @@ const Playbacks = ({ tracksList, activeTrack, setActiveTrack }) => {
                         <StyledButton onClick={() => setActiveTrack(activeTrack - 1)}>
                             <TiMediaPlayReverse />
                         </StyledButton>
-                        <Track track={track} />
+                        <Track track={track} activeTrack={activeTrack} />
                         <StyledButton onClick={() => setActiveTrack(activeTrack + 1)}>
                             <TiMediaPlay />
                         </StyledButton>
