@@ -58,7 +58,7 @@
     "babel-upgrade": "^1.0.1",
     "classnames": "^2.2.6",
     "eslint-plugin-prettier": "^3.1.0",
-    "nodemon": "^1.19.2",
+    "express": "^4.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-async-script-loader": "^0.3.0",

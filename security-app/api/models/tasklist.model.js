@@ -6,4 +6,5 @@ const tasklistSchema = mongoose.Schema({
     name: String,
 });
 
-module.exports = mongoose.model('TaskList', tasklistSchema);
+const TaskList = mongoose.model('TaskList', tasklistSchema);
+module.exports = TaskList;
